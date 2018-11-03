@@ -80,17 +80,31 @@ $(window).on('load', function() {
 
 
 
+console.log(start);
 
-let element1 = document.getElementById("start");
-element1.addEventListener("click", function(){
-	document.getElementById('start').classList.add("hidden");
-	document.getElementById('stopp').classList.remove("hidden");
+$(document).ready(()=>{
+let Interval;
+
+$("#start").click((event)=>{
+
+			document.getElementById('start').classList.add("hidden");
+      document.getElementById('stopp').classList.remove("hidden");
+
+
+interval = setInterval(()=>{
+const elapsed = Date.now() - start;
+const min = Math.floor(elapsed / 60000);
+const sek = Math.floor((elapsed - (min * 60000)) / 1000);
+const milli = elapsed - ((min * 60000) + (sek * 1000))
+
+$("#timer").html(min.toString().padStart(2, '0')+':'+sek.toString().padStart(2, '0')+':'+milli.toString().padStart(3, '0'));
+},20);
 
 });
 
-document.getElementById("stopp").addEventListener("click", function(){
-	document.getElementById('stopp').classList.add("hidden");
-	document.getElementById('reset').classList.remove("hidden");
-	document.getElementById('contender').classList.remove("hidden");
-	console.log(document.getElementById.className);
+$("#stopp").click((event)=>{
+document.getElementById('start').classList.add("hidden");
+document.getElementById('contender').classList.remove("hidden");
+
+});
 });
