@@ -1528,6 +1528,13 @@ height:800px;
 .topplisten{
 	color: #ffffff;
 	font-size: 30px;
+	margin-top: -250px;
+
+}
+
+.topplisten ul {
+list-style-type: none;
+
 }
 /* stoppbutton*/
 
@@ -1555,6 +1562,7 @@ color: #ffffff;
 	font-size: 30px;
 	color: #ffffff;
 }
+
 #livestream {
 	position: absolute;
 	bottom: 40px;
